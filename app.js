@@ -1,28 +1,20 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+const todoController = require("./controller/todoController");
 
-// set app
+// initialize express
 const app = express();
 
-// fire bodyParser
-const urlencodedparser = bodyParser.urlencoded({ extended: false });
-// set express statice route
-app.use(express.static("public"));
+// set view engine to ejs
+app.set("view engine", "ejs");
 
-// set up index page
-app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/signup.html");
+// handle static request
+app.use(express.static("./public"));
+
+todoController(app);
+// start Server
+const Port = 3000;
+app.listen(Port, function () {
+  console.log("Server started!, Running on port " + Port);
 });
 
-// handle post request
-app.post("/", urlencodedparser, function (req, res) {
-  console.log(req.body);
-});
-
-//listen to server
-app.listen(3000, function () {
-  console.log("Server is running on port 3000!");
-});
-
-// apikey 
-// e7248c74f9a85b5f459f0152610c53b7-us11
+module.exports = app;

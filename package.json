@@ -6,7 +6,8 @@
     "mongodb": "^5.1.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon app.js"
   },
   "name": "node-course",
   "description": "node tutorial",

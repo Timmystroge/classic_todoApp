@@ -1,11 +1,10 @@
-Newsletter Application with Mailchimp <br/>
+Todo Application with express <br/>
 
 Stacks <br/>
 
-const Newsletter_app = {
+const Todo_app = {
 Node,
 Express,
-Mailchimp,
 dev: "Timmystroge75@gmail.com"
 }
 
