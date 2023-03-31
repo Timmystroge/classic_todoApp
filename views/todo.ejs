@@ -1,13 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stroge Dev</title>
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body>
-    <h1>Hello world - todo page</h1>
-  </body>
-</html>
+<%- include("header") -%>
+<div class="box" id="heading">
+  <h1><%= listTitle %></h1>
+</div>
+
+<div class="box">
+  <!-- Loop Through todo list and display to client] -->
+  <% for(i = 0; i < todoLists.length; i++ ){ %>
+  <div class="item">
+    <input type="checkbox" />
+    <p><%= todoLists[i] %></p>
+  </div>
+  <% } %>
+
+  <form action="/" method="POST" class="item">
+    <input
+      type="text"
+      name="newItem"
+      placeholder="New Item"
+      required
+      autofocus
+      autocomplete="off"
+    />
+    <button type="submit" name="list" value="<%= listTitle %>">+</button>
+  </form>
+</div>
+
+<%- include("footer") -%>
