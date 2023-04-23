@@ -11,20 +11,22 @@ body {
   /* width: 100%;
   height: 100vh;
   font-family: calibri; */
-  font-family: "helvetica";
+  font-family: "tahoma";
   scroll-behavior: smooth;
   transition: var(--transition);
 }
 html {
   background: #e4e9fd;
-  background-image: -webkit-linear-gradient(65deg, #a683e3 50%, #e4e9fd 50%);
-  min-height: 1000px;
-  font-family: "helvetica neue";
+  background-image: -webkit-linear-gradient(65deg, #0a44b9 50%, #e4e9fd 50%);
+  min-height: 100vh;
+  font-family: "tahoma";
 }
 
 h1 {
   color: #fff;
   padding: 10px;
+  font-family: cursive;
+  font-size: 1.2rem;
 }
 .box {
   max-width: 400px;
@@ -35,7 +37,7 @@ h1 {
 }
 
 #heading {
-  background: #a683e3;
+  background: #0a44b9;
   text-align: center;
 }
 
@@ -51,34 +53,37 @@ h1 {
 
 input:checked + p {
   text-decoration: line-through;
-  text-decoration-color: #a683e3;
+  text-decoration-color: #0a44b9;
 }
 
 input[type="checkbox"] {
-  margin: 20px;
+  margin: 20px 5px 20px 20px;
 }
 p {
   margin: 0;
   padding: 20px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 200;
   color: #00204a;
+  text-transform: capitalize;
 }
 
-form {
+form.item {
   text-align: center;
   margin-left: 20px;
 }
 
 button {
-  min-height: 50px;
-  width: 50px;
+  min-height: 30px;
+  width: 30px;
   border-radius: 50%;
-  background-color: #a683e3;
+  background-color: #0a44b9;
   color: #fff;
-  font-size: 30px;
+  font-size: 20px;
   /* padding-bottom: 6px; */
   border-width: 0;
+  position: relative;
+  right: .3rem;
 }
 
 input[type="text"] {
@@ -87,23 +92,23 @@ input[type="text"] {
   top: 10px;
   border: none;
   background: transparent;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 200;
-  width: 313px;
+  width: 90%;
 }
 
 input[type="text"]:focus {
   outline: none;
-  box-shadow: inset 0 -3px 0 0 #a683e3;
+  box-shadow: inset 0 -3px 0 0 #0a44b9;
 }
 ::placeholder {
   color: grey;
   opacity: 1;
 }
 footer {
-  color: white;
-  color: rgba(0, 0, 0, 0.5);
+  color: #333333af;
   text-align: center;
+  font-size: .8rem;
 }
 
 .errorPage_wrapper {

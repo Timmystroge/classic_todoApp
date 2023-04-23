@@ -4,13 +4,21 @@
 </div>
 
 <div class="box">
-  <!-- Loop Through todo list and display to client] -->
-  <% for(i = 0; i < todoLists.length; i++ ){ %>
-  <div class="item">
-    <input type="checkbox" />
-    <p><%= todoLists[i] %></p>
-  </div>
-  <% } %>
+  <!-- Loop Through todo list and display to client -->
+  <% todoLists.forEach(list => { %>
+  <form action="/delete" method="post">
+    <div class="item">
+      <input
+        type="checkbox"
+        name="checkbox"
+        onChange="this.form.submit()"
+        value="<%= list._id %>"
+      />
+      <p><%= list.name %></p>
+    </div>
+    <input type="hidden" name="listName" value="<%= listTitle %>">
+  </form>
+  <%}) %>
 
   <form action="/" method="POST" class="item">
     <input
