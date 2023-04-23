@@ -13,9 +13,13 @@ app.use(express.static("./public"));
 todoController(app);
 
 // start Server
-const Port = 3000;
-app.listen(Port, function () {
-  console.log("Server started!, Running on port " + Port);
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, function () {
+  console.log("Server started Successfully! Happy Coding Stroge");
 });
 
 module.exports = app;
