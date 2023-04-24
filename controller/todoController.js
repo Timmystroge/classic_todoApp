@@ -1,24 +1,24 @@
 const bodyPaser = require("body-parser");
-// const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const _ = require("lodash");
 
 // set middleware
 const urlencodedparser = bodyPaser.urlencoded({ extended: false });
+
 // init dot env
 dotenv.config();
-// connect and create dtatbase
+
+// connect and create database
 mongoose
-  .connect(
-    "mongodb+srv://timmystroge75:oluwatimileyin@cluster2544.0xwpq6z.mongodb.net/todolistDB"
-  )
+  .connect(process.env.BACKEND_API)
   .then(function () {
     console.log("Connection Secured!");
+  })
+  .catch((err) => {
+    console.log("Connection Failed!");
+    console.log(err);
   });
-// mongoose.connect("mongodb://127.0.0.1:27017/todolistDB").then(function () {
-//   console.log("Connection Secured!");
-// });
 
 // create new Item Schema
 const itemsSchema = new mongoose.Schema({
